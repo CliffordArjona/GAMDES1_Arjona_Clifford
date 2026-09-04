@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbo7rc06m67fs"]
+
+[ext_resource type="Script" uid="uid://buwo4yb544436" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=1048463957]
+script = ExtResource("1_ig7tw")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=487747528]
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1807844309]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1368893204]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(3, 3)
+text = "This is Lab Acitivty No.1"

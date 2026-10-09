@@ -3,3 +3,6 @@ Laboratory Activity 1
 
 Laboratory Activity 2
 <img width="1634" height="937" alt="image" src="https://github.com/user-attachments/assets/de884957-083e-4926-9795-714e74c50aec" />
+
+Midterms Laboratory Activity 1
+<img width="1156" height="643" alt="image" src="https://github.com/user-attachments/assets/3dfdca64-8240-4d52-8eca-2e6648af631a" />

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dnotn81elw322"]
+
+[ext_resource type="Script" uid="uid://mjcx2ktarmg8" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://c4nyidd43wjn4" path="res://assets/enemy.png" id="2_md0e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lcfv"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5s8"]
+size = Vector2(72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lcfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}],
+"loop": 1,
+"name": &"enemy",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1639246618]
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1093797404]
+script = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=365641743]
+shape = SubResource("RectangleShape2D_1lcfv")
+
+[node name="Hitbox" type="Area2D" parent="Enemy" unique_id=1206342530]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Hitbox" unique_id=562852269]
+shape = SubResource("RectangleShape2D_0s5s8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=834502261]
+sprite_frames = SubResource("SpriteFrames_1lcfv")
+animation = &"enemy"
+autoplay = "enemy"

@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_4g0vn"]
+[ext_resource type="Texture2D" path="res://assets/generated/gates/thorn_barrier.png" id="2_wg1w7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26218"]
+size = Vector2(16, 66)
+
+[node name="GateThorn" type="StaticBody2D" unique_id=2038761656]
+collision_mask = 0
+script = ExtResource("1_4g0vn")
+open_message = "The thorns wither away. The path east is open."
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1773206651]
+texture = ExtResource("2_wg1w7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460790932]
+shape = SubResource("RectangleShape2D_26218")

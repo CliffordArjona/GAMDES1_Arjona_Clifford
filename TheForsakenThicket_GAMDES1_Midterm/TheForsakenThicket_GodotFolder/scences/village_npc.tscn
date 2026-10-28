@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_5ku2b"]
+[ext_resource type="Texture2D" path="res://assets/generated/fx/shadow.png" id="2_sxorh"]
+[ext_resource type="SpriteFrames" path="res://resources/npc_frames.tres" id="3_nc7l6"]
+[ext_resource type="Texture2D" path="res://assets/generated/sprites/quest_mark.png" id="4_qi204"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jyvru"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_124kv"]
+radius = 22.0
+
+[node name="VillageNPC" type="StaticBody2D" unique_id=1370780570]
+collision_mask = 0
+script = ExtResource("1_5ku2b")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=318053129]
+position = Vector2(0, -1)
+texture = ExtResource("2_sxorh")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1156610910]
+sprite_frames = ExtResource("3_nc7l6")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941983621]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_jyvru")
+
+[node name="Interact" type="Area2D" parent="." unique_id=2066741348]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=787423426]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_124kv")
+
+[node name="Mark" type="Sprite2D" parent="." unique_id=1927527980]
+position = Vector2(0, -34)
+texture = ExtResource("4_qi204")

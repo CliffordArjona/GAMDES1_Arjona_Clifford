@@ -1,7 +1,8 @@
 THE FORSAKEN THICKET  -  Windows Executable
 
-1. Double-click TheForsakenThicket.exe  (no installation needed).
-2. If Windows says "Windows protected your PC", click "More info" then "Run anyway"
+1. Extract TheForsakenThicket.exe.zip
+2. Double-click TheForsakenThicket.exe  (no installation needed).
+3. If Windows says "Windows protected your PC", click "More info" then "Run anyway"
    (the game is not code-signed, which is normal for student projects).
 
 Controls: W A S D move | Space / left click sword | Q / right click Mana Bolt | Shift or Ctrl dodge |

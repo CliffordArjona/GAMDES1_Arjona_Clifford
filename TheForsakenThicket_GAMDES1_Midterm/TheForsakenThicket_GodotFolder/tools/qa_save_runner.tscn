@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://tools/qa_save.gd" id="1"]
+
+[node name="QASave" type="Node"]
+script = ExtResource("1")

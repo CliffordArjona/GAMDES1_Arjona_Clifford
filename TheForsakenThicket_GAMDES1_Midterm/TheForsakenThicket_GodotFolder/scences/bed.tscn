@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/bed.gd" id="1_n4mrp"]
+[ext_resource type="Texture2D" path="res://assets/generated/props/bed.png" id="2_w2few"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmegt"]
+size = Vector2(14, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6c3q"]
+size = Vector2(24, 34)
+
+[node name="Bed" type="Node2D" unique_id=84911912]
+script = ExtResource("1_n4mrp")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1537921810]
+texture = ExtResource("2_w2few")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="." unique_id=491327367]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=2052477567]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_rmegt")
+
+[node name="Interact" type="Area2D" parent="." unique_id=571728094]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=754224309]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_v6c3q")

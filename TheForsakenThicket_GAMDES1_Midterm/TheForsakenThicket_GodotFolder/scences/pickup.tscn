@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_c0hi7"]
+[ext_resource type="Texture2D" path="res://assets/generated/fx/shadow.png" id="2_jxsvc"]
+
+[node name="Pickup" type="Node2D" unique_id=1796753065]
+script = ExtResource("1_c0hi7")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1258079708]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jxsvc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=421842151]
+position = Vector2(0, -6)

@@ -1,0 +1,81 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_eex72"]
+[ext_resource type="Texture2D" path="res://assets/generated/fx/shadow.png" id="2_lev3l"]
+[ext_resource type="SpriteFrames" path="res://resources/wolf_frames.tres" id="3_uar8j"]
+[ext_resource type="Texture2D" path="res://assets/generated/fx/alert.png" id="4_1dx78"]
+[ext_resource type="Script" path="res://scripts/hp_bar.gd" id="5_rgbk3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x7ar8"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jak7m"]
+size = Vector2(22, 17.6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erfvl"]
+radius = 12.1
+
+[node name="Wolf" type="CharacterBody2D" unique_id=887534797]
+collision_layer = 4
+collision_mask = 257
+motion_mode = 1
+script = ExtResource("1_eex72")
+kind = "wolf"
+display_name = "Wolf"
+max_hp = 40
+move_speed = 66.0
+contact_damage = 14
+aggro_radius = 100.0
+leash_radius = 200.0
+attack_range = 46.0
+windup_time = 0.65
+attack_time = 0.34
+attack_speed = 215.0
+recover_time = 0.9
+hurt_stun = 0.22
+zone_name = "Wolf Hollow"
+drops = {
+"wolf_fang": Vector2i(2, 2)
+}
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1024739657]
+position = Vector2(0, -1)
+texture = ExtResource("2_lev3l")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1641596696]
+sprite_frames = ExtResource("3_uar8j")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=195782716]
+position = Vector2(0, -3.6)
+shape = SubResource("CircleShape2D_x7ar8")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=505293514]
+collision_layer = 64
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1923561314]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_jak7m")
+
+[node name="AttackBox" type="Area2D" parent="." unique_id=1398116183]
+collision_layer = 32
+collision_mask = 128
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=202033806]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_erfvl")
+
+[node name="Alert" type="Sprite2D" parent="." unique_id=1992433453]
+visible = false
+position = Vector2(0, -42)
+texture = ExtResource("4_1dx78")
+
+[node name="Bar" type="Node2D" parent="." unique_id=771876392]
+position = Vector2(0, -34)
+script = ExtResource("5_rgbk3")

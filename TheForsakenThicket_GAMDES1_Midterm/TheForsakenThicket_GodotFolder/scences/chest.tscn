@@ -1,0 +1,34 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/chest.gd" id="1_vyhnv"]
+[ext_resource type="SpriteFrames" path="res://resources/chest_frames.tres" id="2_qvbno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0duu"]
+size = Vector2(18, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5wje"]
+radius = 16.0
+
+[node name="Chest" type="Node2D" unique_id=1034410726]
+script = ExtResource("1_vyhnv")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=832147100]
+sprite_frames = ExtResource("2_qvbno")
+animation = &"closed_silver"
+offset = Vector2(0, -7)
+
+[node name="Body" type="StaticBody2D" parent="." unique_id=1074668893]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=488922645]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_a0duu")
+
+[node name="Interact" type="Area2D" parent="." unique_id=506812391]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=211724191]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_p5wje")

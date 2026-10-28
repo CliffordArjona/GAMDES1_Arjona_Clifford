@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_4ehou"]
+[ext_resource type="Texture2D" path="res://assets/generated/gates/ruin_gate.png" id="2_pbv5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w80eq"]
+size = Vector2(16, 66)
+
+[node name="GateRuin" type="StaticBody2D" unique_id=1495016160]
+collision_mask = 0
+script = ExtResource("1_4ehou")
+gate_id = "ruin"
+open_message = "The ruin gate grinds open. Wolf Hollow lies ahead."
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2045427547]
+texture = ExtResource("2_pbv5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=488689466]
+shape = SubResource("RectangleShape2D_w80eq")

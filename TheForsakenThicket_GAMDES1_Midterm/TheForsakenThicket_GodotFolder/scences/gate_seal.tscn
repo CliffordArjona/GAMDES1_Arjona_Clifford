@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_ue8mq"]
+[ext_resource type="Texture2D" path="res://assets/generated/gates/arena_seal.png" id="2_4kkrp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n65tm"]
+size = Vector2(16, 66)
+
+[node name="GateSeal" type="StaticBody2D" unique_id=530366482]
+collision_mask = 0
+script = ExtResource("1_ue8mq")
+gate_id = "seal"
+open_message = "The Arena Seal shatters. The Warden awaits."
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1560067668]
+texture = ExtResource("2_4kkrp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725070441]
+shape = SubResource("RectangleShape2D_n65tm")

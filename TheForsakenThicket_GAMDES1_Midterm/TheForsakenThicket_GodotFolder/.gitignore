@@ -1,8 +1,0 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
-# build output: the .exe/.pck are bigger than GitHub's 100 MB limit, only the .zip is committed
-builds/*.exe
-builds/*.pck
-!builds/*.zip
